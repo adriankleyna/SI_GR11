@@ -9,8 +9,11 @@ Info:
 
 //-----------------------------
 
-Adrian Kleyna\n
-Piotr Brac\n
-Hubert Drzymalski\n
+Adrian Kleyna
+
+Piotr Brac
+
+Hubert Drzymalski
+
 
 //-----------------------------
