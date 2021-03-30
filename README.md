@@ -7,12 +7,13 @@ Project Title: Optymalizacja przestrzeni
 
 Info: Rozwiązanie problemu optymalizacji rozmieszczenia paczek w określonej przestrzeni (np. auto dostawcze)
 
-Programing Language: Pyhton
+Programing Language: Python
 
 //-----------------------------
 
 Data Source : JSON
 
+```
 [
   '{{repeat(20000)}}',
   {
@@ -24,6 +25,7 @@ Data Source : JSON
     weight: '{{floating(1,25,2)}}'
     }
 ]
+```
 
 //-----------------------------
 
