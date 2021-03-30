@@ -16,13 +16,13 @@ Data Source : JSON
 [
   '{{repeat(20000)}}',
   {
-    _id: '{{index([])}}',
+    id: '{{index([])}}',
     toughness: '{{random("hard", "fragile")}}',
     sizeX: '{{floating(1,30,2)}}',
     sizeY: '{{floating(1,30,2)}}',
     sizeZ: '{{floating(1,30,2)}}',
     weight: '{{floating(1,25,2)}}'
-  }
+    }
 ]
 
 //-----------------------------
