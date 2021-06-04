@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {% block css %}
+
+  {% endblock css %}
+  {% block js %}
+
+  {% endblock js %}
+  
+</head>
+<body>
+<div class="a">
+<h1>Sztuczna inteligencja - dr inż. Jacek Paluszak</h1><br><br><br>
+<img class="" src="{% static 'logo.jpg' %}" style="width:200px;height:200px;"/><br><br><br><br><br><br>
+
+<p>Algorytm optymalizacyjny,rozwiązujący tak zwany problem plecakowy. Na wskazanej przestrzeni umieszczamy jak największą liczbę paczek,maksymalnie wykorzystując dostępną objętość.
+Projekt wykonali: <b>Hubert Drzymalski,Adrian Kleyna i Piotr Brac</b>
+</p><br><br>
+        <form class="pt-5" method="post" action="{% url 'index1' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="iteracje">Podaj liczbę iteracji:</label>
+            <input type="text" class="form-control" id="iteracje" aria-required="true" name="iteracje"><br>
+            <label for="capacity">Podaj przestrzeń:</label>
+            <input type="text" class="form-control" id="capacity" aria-required="true" name="capacity"><br>
+            <button type="submit" class="btn btn-outline-dark" value="Add post">RUN</button>
+        </form>
+</div>
+
+
+</body>
+</html>

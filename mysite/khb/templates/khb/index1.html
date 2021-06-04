@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+  {% block css %}
+
+  {% endblock css %}
+  {% block js %}
+
+  {% endblock js %}
+  
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+        <h1>FP PRZED ALGORYTMEM</h1>
+{% for f in fp0 %}
+{{f}}<br>
+{% endfor %}
+<h1>HM PRZED ALGORYTMEM</h1>
+{% for h in hm0 %}
+{{h}}
+{% endfor %}
+        </div>
+        <div class="col-sm-6">
+        <h1>FP PO ALGORYTMIE</h1>
+{% for f in fp %}
+{{f}}<br>
+{% endfor %}
+<h1>HM PO ALGORYTMIE</h1>
+{% for h in hm %}
+{{h}}
+{% endfor %}
+        </div>
+    </div>
+    
+
+<div class="row">
+        <div class="col-sm-12" style="text-align: center;margin-top:5%;">
+<h1>BEST</h1>
+<p>SOLUTION: {{najValues}}</p>
+<p>SOLUTION VALUE: {{naj}}</p><br>
+<a href="{% url 'index'  %}"
+  ><button class="btn btn-outline-dark" >BACK</button>
+</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>
