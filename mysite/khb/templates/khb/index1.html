@@ -1,62 +1,115 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
-  {% block css %}
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+                integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+                crossorigin="anonymous" />
+        {% block css %}
 
-  {% endblock css %}
-  {% block js %}
+        {% endblock css %}
+        {% block js %}
 
-  {% endblock js %}
-  
+        {% endblock js %}
+
 </head>
+
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-        <h1>FP PRZED ALGORYTMEM</h1>
-{% for f in fp0 %}
-{{f}}<br>
-{% endfor %}
-<h1>HM PRZED ALGORYTMEM</h1>
-{% for h in hm0 %}
-{{h}}
-{% endfor %}
+        <div class="container">
+                <div class="row">
+                        <a class="mt-5 pl-2" href="{% url 'index'  %}"><button class="btn btn-outline-primary">Powrót</button>
+                        </a>
+                        <div class="col-sm-12 mt-2 mb-5 justify-content-center text-center">
+                                <img src="{% static 'plecak.png' %}" class="img-fluid photoHead" alt="plecak" style="padding: 2em;">
+                                <div class="container-fluid">
+                                        Wprowadzone dane są poprawne, została przeprowadzona optymalizacja
+                                </div>
+                        </div>
+                </div>
         </div>
-        <div class="col-sm-6">
-        <h1>FP PO ALGORYTMIE</h1>
-{% for f in fp %}
-{{f}}<br>
-{% endfor %}
-<h1>HM PO ALGORYTMIE</h1>
-{% for h in hm %}
-{{h}}
-{% endfor %}
+
+        <div class="container mt-3">
+                <div class="row">
+                        <div class="col-sm-6">
+                                <h2 style="color:rgb(23, 60, 139)">FP PRZED ALGORYTMEM</h2>
+                                <table class="table table-striped">
+                                        <tbody>
+                                                {% for f in fp0 %}
+                                                <tr>
+                                                        <td>{{f}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                                <tr>
+                                        </tbody>
+                                </table>
+                        </div>
+
+                        <div class="col-sm-6">
+                                <h2 style="color:rgb(23, 60, 139);">FP PO ALGORYTMIE</h2>
+                                <table class="table table-striped">
+                                        <tbody>
+                                                {% for f in fp %}
+                                                <tr>
+                                                        <td>{{f}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                                <tr>
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
         </div>
-    </div>
-    
 
-<div class="row">
-        <div class="col-sm-12" style="text-align: center;margin-top:5%;">
-<h1>BEST</h1>
-<p>SOLUTION: {{najValues}}</p>
-<p>SOLUTION VALUE: {{naj}}</p><br>
-<a href="{% url 'index'  %}"
-  ><button class="btn btn-outline-dark" >BACK</button>
-</a>
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-6">
+                                <h2 style="color:rgb(23, 60, 139)">HM POCZĄTKOWE</h2>
+                                <table class="table table-striped">
+                                        <tbody>
+                                                {% for h in hm0 %}
+                                                <tr>
+                                                        <td>{{h}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                                <tr>
+                                        </tbody>
+                                </table>
+                        </div>
+
+                        <div class="col-sm-6">
+                                <h2 style="color:rgb(23, 60, 139);">HM KOŃCOWE</h2>
+                                <table class="table table-striped">
+                                        <tbody>
+                                                {% for h in hm %}
+                                                <tr>
+                                                        <td>{{h}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                                <tr>
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
         </div>
-    </div>
 
-</div>
-
-
-
-
-
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-12 text-center mt-5 mb-5">
+                                <h1 style="color:rgb(23, 60, 139);">Najepsze rozwiązanie optymalizacji</h1>
+                                <p class="solutionText mt-4">Najlepsze rozwiązanie: {{najValues}}</p>
+                                <p class="solutionText mt-4">Wartość: {{naj}}</p><br>
+                                <a href="{% url 'index'  %}"><button class="btn btn-outline-primary">Powrót</button>
+                                </a>
+                        </div>
+                </div>
+        </div>
 </body>
+
 </html>
