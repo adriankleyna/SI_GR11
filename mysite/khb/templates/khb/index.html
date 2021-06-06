@@ -31,7 +31,7 @@
           <div class="justify-content-center">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="{% static 'plecak.png' %}" class="card-img" alt="logo of pwsz" style="padding: 2em;">
+                <img src="{% static 'plecak.png' %}" class="card-img" alt="plecak" style="padding: 2em;">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -39,8 +39,6 @@
                   <h6 class="card-title" style="font-style: italic;">Problem plecakowy</h6>
                   <p class="card-text text-justify">Jest to projekt pochylający się nad optymalizacją problemu plecakowego. Optymalizacja polega na tym aby jak najlepiej wykorzystać
                     zadaną przstrzeń przy wypełnianiu ich obiektami w naszym przypadku są to paczki kurierskie. W projekcie zastosowany został <strong>Algorytm Harmoniczny</strong>
-                  </p>
-                  <p class="card-text">Projekt wykonali: <strong>Huber Drzymalski, Adrian Kleyna i Piotr Brac</strong> 
                   </p>
                 </div>
               </div>
@@ -51,7 +49,34 @@
 
       </div>
 
-      <div class="container mt-5 mb-5" style="width: 70%">
+      <div class="container-fluid mt-5 mb-2 text-center">
+        <h2 style="color:rgb(23, 60, 139)">Projekt wykonali</h2>
+      </div>
+
+      <div class="authors container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <div class="divOfAuthor mt-5 mb-5">
+              <img class="photoAuthor" src="{% static 'hubert.png' %}"/>
+              <p class="authorName">Hubert Drzymalski</p>
+            </div>
+          </div>
+          <div class="col text-center">
+            <div class="divOfAuthor mt-5 mb-5">
+              <img class="photoAuthor" src="{% static 'adrian.jpg' %}"/>
+              <p class="authorName">Adrian Kleyna</p>              
+            </div>      
+          </div>
+          <div class="col text-center">
+            <div class="divOfAuthor mt-5 mb-5">
+              <img class="photoAuthor" src="{% static 'piotr.jpg' %}"/>
+              <p class="authorName">Piotr Brac</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="colorForm container mt-5 mb-5" style="width: 70%">
         <form  method="post" action="{% url 'index1' %}">
           {% csrf_token %}
           <div class="form-group">
@@ -63,7 +88,7 @@
             <input type="text" class="form-control" id="capacityLabel" placeholder="80000" aria-required="true" name="capacity">
           </div>
           <div class="form-group text-center mt-4 mb-5">
-            <button type="submit" class="btn btn-outline-success" value="Add post">Uruchom</button>
+            <button type="submit" class="btn btn-outline-light" value="Add post">Uruchom</button>
           </div>
         </form>
 
@@ -79,26 +104,5 @@
     </div>
   </div>
 </div>
-
-
-<!-- <div class="a">
-<h1>Sztuczna inteligencja - dr inż. Jacek Paluszak</h1><br><br><br>
-<img class="" src="{% static 'logo.jpg' %}" style="width:200px;height:200px;"/><br><br><br><br><br><br>
-
-<p>Algorytm optymalizacyjny,rozwiązujący tak zwany problem plecakowy. Na wskazanej przestrzeni umieszczamy jak największą liczbę paczek,maksymalnie wykorzystując dostępną objętość.
-Projekt wykonali: <b>Hubert Drzymalski,Adrian Kleyna i Piotr Brac</b>
-</p><br><br>
-        <form class="pt-5" method="post" action="{% url 'index1' %}">
-          {% csrf_token %}
-          <div class="form-group">
-            <label for="iteracje">Podaj liczbę iteracji:</label>
-            <input type="text" class="form-control" id="iteracje" aria-required="true" name="iteracje"><br>
-            <label for="capacity">Podaj przestrzeń:</label>
-            <input type="text" class="form-control" id="capacity" aria-required="true" name="capacity"><br>
-            <button type="submit" class="btn btn-outline-dark" value="Add post">RUN</button>
-        </form>
-</div> -->
-
-
 </body>
 </html>
