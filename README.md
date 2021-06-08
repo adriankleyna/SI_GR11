@@ -3,6 +3,8 @@ PWSZ Elblag
 
 //-----------------------------
 
+link: https://szutcznainteligencjakhb.azurewebsites.net/
+
 Project Title: Optymalizacja przestrzeni
 
 Info: Rozwiązanie problemu optymalizacji rozmieszczenia paczek w określonej przestrzeni (np. auto dostawcze)
